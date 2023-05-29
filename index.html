@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        .nav {
+            width: 20%;
+            height: 800px;
+        }
+        .content {
+            width: 75%;
+            height: 800px;
+        }
+        .content * {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        body {
+            background-color: antiquewhite;
+        }
+        h1 {
+            font-size: 200px;
+        }
+        h2 {
+            font-size: 50px;
+        }
+        h3 {
+            font-size: 30px;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        li {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        li:hover {
+            text-decoration: underline;
+            color: brown;
+            transform: translateY(-2px);
+            transition: 0.4s;
+        }
+        li:active {
+            color: burlywood;
+            transition: 0s;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 4px;
+        }
+        div {
+            float: left;
+            border: 2px solid black;
+            margin: 4px;
+            padding: 4px;
+        }
+    </style>
+    <script>
+        function pageChange(n) {
+            let pages = ['page1', 'page2', 'page3', 'page4', 'page5', 'page6']
+
+            // 보여라 얍
+            const elementAppear = document.getElementsByClassName(pages[n - 1])
+            for (let i = 0; i < elementAppear.length; i++) {
+                elementAppear[i].style.display = 'block';
+            }
+            
+            // 사라져라 얍
+            delete pages[n - 1];
+            for (let i = 0; i < pages.length; i++) {
+                const elementDisappear = document.getElementsByClassName(pages[i])
+                for (let j = 0; j < elementDisappear.length; j++) {
+                elementDisappear[j].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <ol>
+            <li onclick="pageChange(1)">처음</li>
+            <li onclick="pageChange(2)">중간</li>
+            <ol>
+                <li onclick="pageChange(2)">결초보은의 한자와 겉뜻과 속뜻</li>
+                <li onclick="pageChange(3)">결초보은의 유래</li>
+                <li onclick="pageChange(4)">결초보은의 유래 요약</li>
+                <li onclick="pageChange(5)">결초보은의 예시</li>
+            </ol>
+            <li onclick="pageChange(6)">끝</li>
+        </ol>
+    </div>
+    <div class="content">
+        <h1 class="page1" style="margin-top: 100px;">結草報恩</h1>
+        <h2 class="page1">고사성어 <u>결초보은</u>에 대하여 알아보자.<br>10425 정규민</h2>
+        <table class="page2" style="display: none; margin-top: 100px; width: 80%;">
+            <tr>
+                <td rowspan="2"><h2>한<br>자</h2></td>
+                <td><h1>結</h1></td>
+                <td><h1>草</h1></td>
+                <td><h1>報</h1></td>
+                <td><h1>恩</h1></td>
+            </tr>
+            <tr>
+                <td><h2>맺을 결</h2></td>
+                <td><h2>풀 초</h2></td>
+                <td><h2>갚을 보</h2></td>
+                <td><h2>은혜 은</h2></td>
+            </tr>
+            <tr>
+                <td><h2>겉<br>뜻</h2></td>
+                <td colspan="4"><h3>풀을 묶어서 은혜(恩惠)를 갚는다.</h3></td>
+            </tr>
+            <tr>
+                <td><h2>속<br>뜻</h2></td>
+                <td colspan="4"><h3>무슨 짓을 하여서든지 잊지 않고 은혜(恩惠)에 보답(報答)함.</h3></td>
+            </tr>
+        </table>
+        <iframe class="page3" style="display: none;" width="1120" height="630" src="https://www.youtube.com/embed/sbboffnreJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <h2 class="page4" style="display: none; margin-top: 300px;">서모(庶母)의 아버지의 망혼이 풀을 묶어서<br>위과(魏顆)에게 은혜를 갚음.</h2>
+        <iframe class="page5" style="display: none;" width="1120" height="630" src="https://www.youtube.com/embed/oMmj-1S4VbQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <h2 class="page5" style="display: none">한국 전쟁에서 지원군을 파병해준 에티오피아에게 결초보은을 하는 캠페인.</h2>
+        <h1 class="page6" style="display: none; margin-top: 100px;">감사합니다.</h1>
+        <h2 class="page6" style="display: none;">10425 정규민</h2>
+    </div>
+</body>
+</html>
